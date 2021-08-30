@@ -11,13 +11,13 @@ module.exports = (req, res, next) => {
       req.authUser = authUser
       next()
     } else {
-      res.status(401).send({
+      res.status(401).json({
         success: false,
         message: 'Unauthorized'
       })
     }
   } else {
-    res.status(401).send({
+    res.status(401).json({
       success: false,
       message: 'Unauthorized'
     })
